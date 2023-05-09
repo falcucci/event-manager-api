@@ -1,10 +1,9 @@
-import json
-from django.http import HttpResponse
-from rest_framework import status
+from rest_framework import viewsets
+from events.models import Event
+from events.serializers import EventSerializer
+from events.permissions import CustomPermissions
 
-def events(request):
-    return HttpResponse(
-        json.dumps({"status": "ok"}),
-        content_type="application/json",
-        status=status.HTTP_200_OK
-    )
+class EventsViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    permission_classes = (CustomPermissions,)

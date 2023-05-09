@@ -1,7 +1,7 @@
 from rest_framework.permissions import BasePermission
 
-
 class CustomPermissions(BasePermission):
+    """defines custom permissions for the event."""
 
     def has_permission(self, request, view):
         if not request.user.is_authenticated:
