@@ -1,38 +1,24 @@
-from rest_framework.generics import GenericAPIView
-from .serializers import UserSerializer, LoginSerializer
+from datetime import datetime, timedelta
+
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-from django.contrib import auth
-from .models import User
+from rest_framework.decorators import api_view, permission_classes
+
+from authentication.serializers import UserRegisterSerializer, UserSerializer
 
 
-class RegisterView(GenericAPIView):
-    serializer_class = UserSerializer
+@swagger_auto_schema(method='post', request_body=UserRegisterSerializer)
+@api_view(http_method_names=['POST'])
+@permission_classes(permission_classes=(AllowAny, ))
+def register(request):
+    user_serialized = UserRegisterSerializer(data=request.data)
+    user_serialized.is_valid(raise_exception=True)
+    user = user_serialized.save()
+    print(user.username, user.email, user.first_name)
 
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            user = User.objects.get(email=serializer.data['email'])
-
-            print(user)
-
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class LoginView(GenericAPIView):
-    serializer_class = LoginSerializer
-
-    def post(self, request):
-        data = request.data
-        username = data.get('username', '')
-        password = data.get('password', '')
-        user = auth.authenticate(username=username, password=password)
-
-        if user:
-            serializer = LoginSerializer(user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-
-        return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-        
+    return Response(
+        status=status.HTTP_201_CREATED,
+        data=UserSerializer(user).data
+    )
