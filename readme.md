@@ -7,8 +7,8 @@ It allows users to create, update, and delete events, as well as view and search
 
 ## todo-list
 
-- [ ] Users can register an account
-- [ ] Users can log in into their account
+- [x] Users can register an account
+- [x] Users can log in into their account
 - [ ] A system of token rotation is implemented. The API provides a user with access_token and a refresh_token, as well as a way to refresh and validate the access_token. The lifetime of the access_token is 1 hour and the lifetime of the refresh_token is 1 day
 - [ ] Users can create events in the app's database (postgres)
 - [ ] Users can see the list of events they have created
