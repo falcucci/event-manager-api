@@ -21,5 +21,5 @@ from core.health import main
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('health/', main.health),
-    path('api/auth/', include('authentication.urls')),
+    path('api/', include('authentication.urls')),
 ]
