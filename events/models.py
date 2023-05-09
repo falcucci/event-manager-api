@@ -21,3 +21,6 @@ class Event(models.Model):
         related_name='subscriptions',
         blank=True
     )
+
+    def __str__(self):
+        return self.name
