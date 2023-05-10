@@ -10,21 +10,6 @@ class EventsViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     permission_classes = (CustomPermissions,)
 
-    def retrieve(self, request, pk=None):
-        event = Event.objects.get(id=pk)
-        serialized = EventSerializer(event)
-        if event.created_by != request.user:
-            return Response(
-                status=status.HTTP_401_UNAUTHORIZED,
-                data={
-                    'message': 'You are not allowed to see this event.'
-                }
-            )
-        return Response(
-            status=status.HTTP_200_OK,
-            data=serialized.data
-        )
-
     def create(self, request, *args, **kwargs):
         data = copy(self.request.data)
         data['created_by'] = self.request.user.id
