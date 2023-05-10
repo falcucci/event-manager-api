@@ -25,3 +25,14 @@ class EventsViewSet(viewsets.ModelViewSet):
             status=status.HTTP_201_CREATED,
             data=serialized.data
         )
+
+    def update(self, request, pk=None):
+        event = Event.objects.get(id=pk)
+        if event.created_by != request.user:
+            return Response(
+                status=status.HTTP_401_UNAUTHORIZED,
+                data={
+                    'message': 'You are not allowed to edit this event.'
+                }
+            )
+        return super().update(request, pk)
