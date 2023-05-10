@@ -17,3 +17,8 @@ class EventSerializer(serializers.ModelSerializer):
             'created_by',
             'subscribers'
         )
+
+class EventCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Event
+        fields = '__all__'
