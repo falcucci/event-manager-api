@@ -13,11 +13,11 @@ It allows users to create, update, and delete events, as well as view and search
 - [x] Users can create events in the app's database (postgres)
 - [ ] Users can see the list of events they have created
 - [x] Users can see a list of all events
-- [ ] Users can edit the events they have created but not the ones created by other users
+- [x] Users can edit the events they have created but not the ones created by other users
 - [ ] Users can register to an event or un-register. This can only be done in future events and not in past events.
 - [ ] Documentation of your code
 - [ ] API docs (swagger or other)
 - [ ] Tests
 - [ ] Add logic to manage an event capacity: if event reaches maximum number of registered attendees, an error should be returned to a user trying to register
-- [ ] Add some  filtering to endpoints retrieving events (e.g. date , type, status, past events, future events, etc)
+- [ ] Add some filtering to endpoints retrieving events (e.g. date , type, status, past events, future events, etc)
 - [ ] Create a frontend to consume the API
