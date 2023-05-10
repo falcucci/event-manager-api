@@ -64,4 +64,12 @@ class EventsViewSet(viewsets.ModelViewSet):
             data={"detail": "Successful subscription."}
         )
 
+    @action(methods=['POST'], detail=True)
+    def unsubscribe(self, request, pk=None):
+        event = self.get_object()
+        if request.user in event.subscribers.all():
+            event.subscribers.remove(request.user)
+            return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
 
