@@ -3,10 +3,11 @@ from rest_framework import viewsets, status
 from events.models import Event
 from events.serializers import EventSerializer, EventCreateSerializer
 from events.permissions import CustomPermissions
+from rest_framework.decorators import action
 from copy import copy
 
 class EventsViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all()
+    queryset = Event.objects.all().order_by('id')
     serializer_class = EventSerializer
     permission_classes = (CustomPermissions,)
 
@@ -36,3 +37,14 @@ class EventsViewSet(viewsets.ModelViewSet):
                 }
             )
         return super().update(request, pk)
+
+    @action(methods=['GET'], detail=False)
+    def subscribed(self, request):
+        subscriptions = request.user.subscriptions.all()
+        subscriptions_serialized = EventSerializer(subscriptions, many=True)
+        return Response(
+            status=status.HTTP_200_OK,
+            data=subscriptions_serialized.data
+        )
+
+
