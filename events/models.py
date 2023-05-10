@@ -7,7 +7,7 @@ class Event(models.Model):
     description = models.TextField()
     status = models.CharField(max_length=100)
     start_date = models.DateTimeField(default=datetime.now() + timedelta(days=1))
-    end_date = models.DateTimeField()
+    end_date = models.DateTimeField(default=datetime.now() + timedelta(days=2))
     location = models.CharField(max_length=100)
     capacity = models.IntegerField(default=20)
     is_public = models.BooleanField(default=True)
