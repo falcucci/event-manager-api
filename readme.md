@@ -12,7 +12,7 @@ It allows users to create, update, and delete events, as well as view and search
 - [x] A system of token rotation is implemented. The API provides a user with access_token and a refresh_token, as well as a way to refresh and validate the access_token. The lifetime of the access_token is 1 hour and the lifetime of the refresh_token is 1 day
 - [ ] Users can create events in the app's database (postgres)
 - [ ] Users can see the list of events they have created
-- [ ] Users can see a list of all events
+- [x] Users can see a list of all events
 - [ ] Users can edit the events they have created but not the ones created by other users
 - [ ] Users can register to an event or un-register. This can only be done in future events and not in past events.
 - [ ] Documentation of your code
