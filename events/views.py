@@ -4,6 +4,7 @@ from events.models import Event
 from events.serializers import EventSerializer, EventCreateSerializer
 from events.permissions import CustomPermissions
 from rest_framework.decorators import action
+from django.utils import timezone
 from copy import copy
 
 class EventsViewSet(viewsets.ModelViewSet):
@@ -45,6 +46,22 @@ class EventsViewSet(viewsets.ModelViewSet):
         return Response(
             status=status.HTTP_200_OK,
             data=subscriptions_serialized.data
+        )
+
+    @action(methods=['POST'], detail=True)
+    def subscribe(self, request, pk=None):
+        event = self.get_object()
+
+        if event.start_date < timezone.now():
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST,
+                data={"detail": "Event has already started."}
+            )
+
+        event.subscribers.add(request.user)
+        return Response(
+            status=status.HTTP_200_OK,
+            data={"detail": "Successful subscription."}
         )
 
 
