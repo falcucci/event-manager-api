@@ -5,9 +5,15 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import CustomTokenObtainPairSerializer
 
 from authentication.serializers import UserRegisterSerializer, UserSerializer
 
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    # Replace the serializer with your custom
+    serializer_class = CustomTokenObtainPairSerializer
 
 @swagger_auto_schema(method='post', request_body=UserRegisterSerializer)
 @api_view(http_method_names=['POST'])
@@ -22,3 +28,5 @@ def register(request):
         status=status.HTTP_201_CREATED,
         data=UserSerializer(user).data
     )
+
+
