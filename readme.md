@@ -1,12 +1,18 @@
 # event-manager-api
 
+The event-manager-api is a rest API that provides an easy way to manage and track events.
+
+It allows users to create, update, and delete events, as well as view and search them.
+
+### docs
+
 POSTMAN           |  SWAGGER
 :-------------------------:|:-------------------------:
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://api.postman.com/collections/3410852-4526f70b-1790-40da-906c-1bcd67f12b40?access_key=PMAT-01H06EEY1N1X86WB24YKANV42J ) |  [![Swagger logo](https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png)](http://localhost:8000/swagger/)
 
-The event-manager-api is a rest API that provides an easy way to manage and track events.
-
-It allows users to create, update, and delete events, as well as view and search them.
+You can choose the documentation you are more comfortable with to check it out.
+As I do everything in postman to validate I also create always a doc about the services I am working with.
+As simple as that, import it and run.
 
 ![code-snippet-7](https://github.com/falcucci/event-manager-api/assets/33763843/b02bb6d2-edb6-4ce6-989a-ea80b7cc4dbc)
 
