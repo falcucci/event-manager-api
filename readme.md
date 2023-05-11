@@ -5,6 +5,8 @@ The event-manager-api is a rest API that provides an easy way to manage and trac
 
 It allows users to create, update, and delete events, as well as view and search them.
 
+![code-snippet-7](https://github.com/falcucci/event-manager-api/assets/33763843/b02bb6d2-edb6-4ce6-989a-ea80b7cc4dbc)
+
 ## todo-list
 
 - [x] Users can register an account
