@@ -1,6 +1,8 @@
 # event-manager-api
- ___
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://api.postman.com/collections/3410852-4526f70b-1790-40da-906c-1bcd67f12b40?access_key=PMAT-01H06EEY1N1X86WB24YKANV42J )
+
+POSTMAN           |  SWAGGER
+:-------------------------:|:-------------------------:
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://api.postman.com/collections/3410852-4526f70b-1790-40da-906c-1bcd67f12b40?access_key=PMAT-01H06EEY1N1X86WB24YKANV42J ) |  [![Swagger logo](https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png)](http://localhost:8000/swagger/)
 
 The event-manager-api is a rest API that provides an easy way to manage and track events.
 
