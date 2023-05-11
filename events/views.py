@@ -11,6 +11,14 @@ class EventsViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all().order_by('id')
     serializer_class = EventSerializer
     permission_classes = (CustomPermissions,)
+    def get_queryset(self):
+        try:
+            data = {}
+            for i in self.request.query_params:
+                data[i] = self.request.query_params[i]
+            return self.queryset.filter(**data)
+        except KeyError:
+            return self.queryset
 
     def create(self, request, *args, **kwargs):
         data = copy(self.request.data)
@@ -46,6 +54,15 @@ class EventsViewSet(viewsets.ModelViewSet):
         return Response(
             status=status.HTTP_200_OK,
             data=subscriptions_serialized.data
+        )
+
+    @action(methods=['GET'], detail=False)
+    def mine(self, request):
+        events = Event.objects.filter(created_by=request.user)
+        events_serialized = EventSerializer(events, many=True)
+        return Response(
+            status=status.HTTP_200_OK,
+            data=events_serialized.data
         )
 
     @action(methods=['POST'], detail=True)

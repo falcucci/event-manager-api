@@ -12,7 +12,6 @@ from authentication.serializers import UserRegisterSerializer, UserSerializer
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
-    # Replace the serializer with your custom
     serializer_class = CustomTokenObtainPairSerializer
 
 @swagger_auto_schema(method='post', request_body=UserRegisterSerializer)
