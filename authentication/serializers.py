@@ -10,6 +10,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         data.update({'email': self.user.email})
         data.update({'first_name': self.user.first_name})
         data.update({'last_name': self.user.last_name})
+        data.update({'id': self.user.id})
         return data
 
 

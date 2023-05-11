@@ -22,4 +22,4 @@ It allows users to create, update, and delete events, as well as view and search
 - [ ] Tests
 - [ ] Add logic to manage an event capacity: if event reaches maximum number of registered attendees, an error should be returned to a user trying to register
 - [x] Add some filtering to endpoints retrieving events (e.g. date , type, status, past events, future events, etc)
-- [ ] Create a frontend to consume the API
+- [x] Create a frontend to consume the API

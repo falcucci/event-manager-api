@@ -8,7 +8,7 @@ from django.utils import timezone
 from copy import copy
 
 class EventsViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all().order_by('id')
+    queryset = Event.objects.all().order_by('-id')
     serializer_class = EventSerializer
     permission_classes = (CustomPermissions,)
     def get_queryset(self):
