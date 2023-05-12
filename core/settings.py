@@ -30,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', 'falcuccis.com']
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    'https://event-manager-app.vercel.app'
 ]
 
 SIMPLE_JWT = {
