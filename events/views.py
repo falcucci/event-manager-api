@@ -75,6 +75,12 @@ class EventsViewSet(viewsets.ModelViewSet):
                 data={"detail": "Event has already started."}
             )
 
+        if event.capacity == event.subscribers.count():
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST,
+                data={"detail": "Event is full."}
+            )
+
         event.subscribers.add(request.user)
         return Response(
             status=status.HTTP_200_OK,
