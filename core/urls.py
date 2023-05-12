@@ -24,18 +24,12 @@ from django.urls import re_path
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Newsletter API",
+        title="Event Manager API",
         default_version='v1',
-        description="API that allows us to make a CRUD of newsletters, these newsletters can be classified by tags to "
-        "improve searches. "
-        "The necessary endpoints will also be built so that common users can subscribe to the newsletters "
-        "and "
-        "unsubscribe from them. "
-        "They will only be able to subscribe to the bulletins that have reached the target that was "
-        "defined when creating the "
-        "bulletin, in case the bulletins have not reached the target they will be available so that they "
-        "can vote for them.",
-        contact=openapi.Contact(email="jacu29@gmiail.com"),
+        description="""The event-manager-api is a rest API that provides an easy way
+        to manage and track events. It allows users to create, update, and delete
+        events, as well as view and search them.""",
+        contact=openapi.Contact(email="alex.falcucci@gmail.com"),
     ),
     public=True,
     permission_classes=(AllowAny,),
