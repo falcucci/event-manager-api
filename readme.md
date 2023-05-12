@@ -85,3 +85,41 @@ python manage.py runserver
 ```
 
 Visit http://127.0.0.1:8000/ in your browser to view the project.
+
+## Coverage
+```bash
+
+Name                                                                    Stmts   Miss  Cover
+-------------------------------------------------------------------------------------------
+authentication/__init__.py                                                  0      0   100%
+authentication/admin.py                                                     1      0   100%
+authentication/apps.py                                                      4      0   100%
+authentication/migrations/0001_initial.py                                   8      0   100%
+authentication/migrations/0002_delete_user.py                               4      0   100%
+authentication/migrations/__init__.py                                       0      0   100%
+authentication/models.py                                                    1      0   100%
+authentication/serializers.py                                              24      0   100%
+authentication/tests.py                                                    18      0   100%
+authentication/urls.py                                                      4      0   100%
+authentication/views.py                                                    20      0   100%
+core/__init__.py                                                            0      0   100%
+core/health/main.py                                                         5      1    80%
+core/settings.py                                                           22      0   100%
+core/urls.py                                                                9      0   100%
+events/__init__.py                                                          0      0   100%
+events/admin.py                                                             1      0   100%
+events/apps.py                                                              4      0   100%
+events/migrations/0001_initial.py                                           7      0   100%
+events/migrations/0002_event_capacity.py                                    4      0   100%
+events/migrations/0003_alter_event_end_date_alter_event_start_date.py       5      0   100%
+events/migrations/__init__.py                                               0      0   100%
+events/models.py                                                           18      1    94%
+events/permissions.py                                                      16      6    62%
+events/serializers.py                                                      10      0   100%
+events/tests.py                                                            51      0   100%
+events/urls.py                                                              5      0   100%
+events/views.py                                                            59     13    78%
+manage.py                                                                  12      2    83%
+-------------------------------------------------------------------------------------------
+TOTAL                                                                     312     23    93%
+```
