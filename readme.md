@@ -28,7 +28,7 @@ As simple as that, import it and run.
 - [x] Users can register to an event or un-register. This can only be done in future events and not in past events.
 - [x] Documentation
 - [x] API docs (swagger or other)
-- [ ] Tests
+- [x] Tests
 - [x] Add logic to manage an event capacity: if event reaches maximum number of registered attendees, an error should be returned to a user trying to register
 - [x] Add some filtering to endpoints retrieving events (e.g. date , type, status, past events, future events, etc)
 - [x] Create a frontend to consume the API
