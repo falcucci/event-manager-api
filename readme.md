@@ -14,7 +14,7 @@ You can choose the documentation you are more comfortable with to check it out.
 As I do everything in postman to validate I also create always a doc about the services I am working with.
 As simple as that, import it and run.
 
-![code-snippet-7](https://github.com/falcucci/event-manager-api/assets/33763843/b02bb6d2-edb6-4ce6-989a-ea80b7cc4dbc)
+![code-snippet-7](https://github.com/falcucci/event-manager-api/assets/33763843/ca48c0ec-a55c-47ca-a49c-f8f60fe43dbd)
 
 ## features
 
