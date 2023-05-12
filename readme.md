@@ -32,3 +32,56 @@ As simple as that, import it and run.
 - [ ] Add logic to manage an event capacity: if event reaches maximum number of registered attendees, an error should be returned to a user trying to register
 - [x] Add some filtering to endpoints retrieving events (e.g. date , type, status, past events, future events, etc)
 - [x] Create a frontend to consume the API
+
+# Installation and Running of Django Project
+
+This guide will help you install and run a Django project.
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+ - Python 3.x
+ - Pip
+ - Virtualenv
+
+## Installation
+
+Clone the project:
+```bash
+git clone git@github.com:falcucci/event-manager-api.git
+```
+
+Create a virtual environment:
+```bash
+virtualenv venv
+```
+
+Activate the virtual environment:
+```bash
+source venv/bin/activate
+```
+
+Install the project's dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Running the Project
+
+Migrate the database:
+```bash
+python manage.py migrate
+```
+
+## Fixtures
+```bash
+python manage.py loaddata fixtures/*
+```
+
+Run the development server:
+```bash
+python manage.py runserver
+```
+
+Visit http://127.0.0.1:8000/ in your browser to view the project.
