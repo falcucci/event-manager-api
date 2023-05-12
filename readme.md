@@ -4,6 +4,8 @@ The event-manager-api is a rest API that provides an easy way to manage and trac
 
 It allows users to create, update, and delete events, as well as view and search them.
 
+check it out the [app](https://event-manager-app.vercel.app) who consumes this service.
+
 ### docs
 
 POSTMAN           |  SWAGGER
